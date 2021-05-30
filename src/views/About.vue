@@ -1,5 +1,23 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <Header />
+    <MainAbout />
+    <Footer />
   </div>
 </template>
+
+<script>
+import Header from "../components/beforeLog/Header";
+import MainAbout from "../components/main/MainAbout";
+import Footer from "../components/Footer";
+
+export default {
+  components: {
+    Header,
+    MainAbout,
+    Footer,
+  },
+};
+</script>
+
+<style lang="scss" scoped></style>
