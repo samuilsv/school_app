@@ -7,19 +7,29 @@
         </div>
         <div class="col-xl-11 ml-auto mr-auto">
           <div class="hero__list">
-            <a v-for="person in persons" :key="person.id">
+            <a
+              v-for="person in persons"
+              :key="person.id"
+              :class="{ mb: !person.isHover }"
+            >
               <div>
-                <p :class="{ speech: person.isHover, hide: !person.isHover }">
+                <p
+                  :class="{
+                    speech: person.isHover,
+                    hide: !person.isHover,
+                  }"
+                >
                   Опис героя. Опис героя. Опис героя. Опис героя. Опис героя.
                   Опис героя. Опис героя. Опис героя. Опис героя. Опис героя.
                 </p>
-              </div>
-              <div
-                @mouseover="person.isHover = true"
-                @mouseout="person.isHover = false"
-              >
-                <img :src="person.photo" />
-                <p class="text-center">{{ person.name }}</p>
+                <div
+                  class="person-info"
+                  @mouseover="person.isHover = true"
+                  @mouseout="person.isHover = false"
+                >
+                  <img :src="person.photo" />
+                  <p class="text-center">{{ person.name }}</p>
+                </div>
               </div>
             </a>
           </div>
@@ -100,7 +110,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     margin-bottom: 208px;
   }
   // &__list a:hover {
@@ -109,7 +119,12 @@ export default {
 }
 .text-center {
   color: #000;
-  text-align: center;
+}
+
+.person-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .fixed {
@@ -117,19 +132,25 @@ export default {
   top: 1;
 }
 
+.mb {
+  margin-bottom: 250px;
+}
+
 .hide {
   display: none;
-  
 }
 
 .speech {
   padding: 16px;
-  max-width: 270px;
+  width: 270px;
   position: relative;
   background: #ffffff;
+  color: #000;
   box-shadow: 0px 2px 25px rgba(204, 219, 224, 0.5);
   border-radius: 10px;
   margin-bottom: 20px;
+  margin-top: -390px;
+  margin-left: 100px;
 }
 .speech:after,
 .speech:before {
@@ -152,5 +173,16 @@ export default {
   border-width: 19px;
   left: 0%;
   margin-left: 0px;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 </style>
