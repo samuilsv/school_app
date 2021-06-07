@@ -1,23 +1,31 @@
 <template>
-  <div class="info-teacher">
-    <div class="info-teacher__body">
-      <div class="info-teacher__top">
+  <div class="info-student">
+    <div class="info-student__body">
+      <div class="info-student__top">
         <img
-          class="info-teacher__photo"
-          src="../../../assets/main/Teacher.png"
+          class="info-student__photo"
+          src="../../../assets/main/Child.png"
           alt="Child"
         />
-        <router-link to="/changeInfoTeacher" class="info-teacher__button"
+        <router-link to="/changeInfoTeacher" class="info-student__button"
           >Редагувати</router-link
         >
       </div>
-      <div class="info-teacher__bottom">
-        <div class="info-teacher__name">Ольга Шевченко</div>
+      <div class="info-student__bottom">
+        <div class="info-student__name">Петро Пяточкін</div>
+        <p>Бали<strong class="bold-green">134</strong></p>
         <p>Школа<strong class="bold">№36</strong></p>
+        <p>Клас<strong class="bold">Безстрашні</strong></p>
         <p>E-mail<strong class="bold">p.pyatochkin@gmail.com</strong></p>
         <p>
           Пароль<strong class="bold">••••••••</strong
-          ><button>Змінити пароль</button>
+          ><router-link class="icon" to="/changeInfoTeacher"
+            ><img
+              src="../../../assets/icon/ChangePhoto.svg"
+              alt="" /></router-link
+          ><router-link class="icon" to="#"
+            ><img src="../../../assets/icon/Copy.svg" alt="Copy"
+          /></router-link>
         </p>
       </div>
     </div>
@@ -25,28 +33,26 @@
 </template>
 
 <style lang="scss" scoped>
-.info-teacher {
-  // .info-teacher__body
+.info-student {
+  // .info-student__body
   &__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-top: 3rem;
     background: #ffffff;
     box-shadow: 0px 2px 25px rgba(204, 219, 224, 0.5);
     border-radius: 20px;
     padding: 32px 40px;
     margin-bottom: 100px;
+    min-width: 395px;
   }
 
-  // .info-teacher__top
+  // .info-student__top
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  // .info-teacher__photo
+  // .info-student__photo
   &__photo {
     margin-bottom: 25px;
     margin-right: 30px;
@@ -55,7 +61,7 @@
     height: 10%;
   }
 
-  // .info-teacher__button
+  // .info-student__button
   &__button {
     position: relative;
     font-weight: 500;
@@ -73,7 +79,7 @@
     content: url("../../../assets/icon/ChangeIcon.svg");
   }
 
-  // .info-teacher__name
+  // .info-student__name
   &__name {
     font-weight: bold;
     font-size: 24px;
@@ -81,6 +87,8 @@
     margin-bottom: 25px;
   }
   p {
+    font-size: 18px;
+    line-height: 22px;
     font-weight: 500;
     margin-bottom: 12px;
   }
@@ -99,14 +107,37 @@
     top: 2px;
     left: 0;
   }
-}
-.bold {
-  color: #353535;
-  margin-left: 30px;
-}
+  &__bottom p {
+    display: flex;
+    align-items: center;
+  }
 
-@media (max-width: 1440px) {
-  .info-teacher {
+  &__bottom .icon img {
+    padding: 10px 11px;
+    background: rgba(53, 53, 53, 0.6);
+    border-radius: 10px;
+    margin-left: 13px;
+    max-width: 42px;
+  }
+
+  &__bottom .icon:last-child {
+    max-width: 50px;
+  }
+
+  .bold-green {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #62c567;
+    margin-left: 30px;
+  }
+  .bold {
+    font-weight: bold;
+    color: #353535;
+    margin-left: 30px;
+  }
+
+  @media (max-width: 1440px) {
     &__body {
       padding: calc(10px + (32 - 10) * ((100vw - 320px) / (1440 - 320)))
         calc(20px + (40 - 20) * ((100vw - 320px) / (1440 - 320)));
@@ -115,9 +146,9 @@
 
     // .info-student__photo
     &__photo {
-      max-width: calc(50% + (100 - 50) * ((100vw - 320px) / (1440 - 320)));
-      margin-right: calc(0px + (30 - 0) * ((100vw - 320px) / (1440 - 320)));
-      height: calc(5% + (10 - 5) * ((100vw - 320px) / (1440 - 320)));
+      max-width: calc(70% + (100 - 70) * ((100vw - 320px) / (1440 - 320)));
+      margin-right: calc(0px + (20 - 0) * ((100vw - 320px) / (1440 - 320)));
+      height: calc(8% + (10 - 8) * ((100vw - 320px) / (1440 - 320)));
     }
 
     // .info-student__name
@@ -155,9 +186,13 @@
       margin-left: calc(10px + (30 - 10) * ((100vw - 320px) / (1180 - 320)));
     }
   }
-}
-@media (max-width: 767px) {
-  .info-teacher {
+  @media (max-width: 767px) {
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: none;
+    }
     // .info-student__top
     &__top {
       display: flex;

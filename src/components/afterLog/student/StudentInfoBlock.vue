@@ -98,7 +98,7 @@
     left: 0;
   }
 
-  @media (max-width: 1180px) {
+  @media (max-width: 1440px) {
     &__body {
       padding: 32px 40px;
       margin: 3rem auto;
@@ -169,6 +169,10 @@
     &__name {
       margin-top: 10px;
       text-align: center;
+    }
+
+    &__bottom {
+      margin: 0 auto;
     }
 
     &__bottom p {

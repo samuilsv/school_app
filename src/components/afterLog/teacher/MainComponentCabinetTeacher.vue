@@ -4,12 +4,14 @@
       <div class="cabinet-teacher__top">
         <div class="cabinet-teacher__title">Кабінет</div>
         <div class="cabinet-teacher__link">
-          <router-link to="/cabinetTeacher" class="cabinet-teacher__button"
+          <router-link
+            to="/cabinetTeacher"
+            class="cabinet-teacher__button active"
             >Класи</router-link
           >
           <router-link
             to="/cabinetStatisticTeacher"
-            class="cabinet-teacher__button active"
+            class="cabinet-teacher__button"
             >Статистика</router-link
           >
         </div>
@@ -17,92 +19,55 @@
       <div class="cabinet-teacher__bottom">
         <div class="cabinet-teacher__table">
           <div class="cabinet-teacher__filter">
-            <CustomSelect
-              :options="options"
-              :default="'Всі класи'"
-              class="select"
-            />
             <div class="search">
               <img
                 src="../../../assets/headerAfterLog/Search.svg"
                 class="search-icon"
                 @click="getInputData"
               />
-              <input placeholder="Пошук по імені" />
+              <input
+                placeholder="Пошук по імені"
+                v-model="searchValue"
+                @keyup.enter="getInputData"
+              />
             </div>
             <div class="cabinet-teacher__add-child">
-              <router-link to="/addClass"
+              <router-link to="/addStudent"
                 ><img
                   src="../../../assets/icon/Add.svg"
                   class="add-icon"
-                />Додати класс</router-link
+                />Додати учня</router-link
               >
             </div>
           </div>
           <div class="table-body">
-            <table class="highlight">
+            <table class="highlight desktop">
               <thead>
                 <tr>
                   <th>
                     <label>
                       <input type="checkbox" class="filled-in" />
-                      <span class="th-text">№&nbsp;&nbsp;ПІБ&nbsp;учня</span>
+                      <span class="th-text">№</span>
                     </label>
                   </th>
-                  <th>
-                    <div class="table-row">
-                      Тестів<i class="arrow-down"></i>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="table-row">Вірно<i class="arrow-down"></i></div>
-                  </th>
-                  <th>
-                    <div class="table-row">
-                      Не&nbsp;вірно<i class="arrow-down"></i>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="table-row">
-                      Не&nbsp;пройдено<i class="arrow-down"></i>
-                    </div>
-                  </th>
-                  <th>
-                    <div class="table-row">Бали<i class="arrow-down"></i></div>
-                  </th>
+                  <th>Клас</th>
+                  <th>Школа</th>
+                  <th>Кількість&nbsp;учнів<i class="arrow-down"></i></th>
+                  <th>Бали<i class="arrow-down"></i></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>
                     <label>
-                      <input
-                        type="checkbox"
-                        @click="isActive = !isActive"
-                        class="filled-in"
-                      />
-                      <span class="th-text"
-                        >1&nbsp;&nbsp;Арбузова&nbsp;Ольга&nbsp;Олександрівна</span
-                      >
+                      <input type="checkbox" class="filled-in" />
+                      <span class="th-text">1</span>
                     </label>
                   </td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>
-                    <router-link
-                      to="/deleteStudent"
-                      class="active-button"
-                      v-if="!isActive"
-                    >
-                      <img
-                        src="../../../assets/icon/Minus.svg"
-                        alt="Minus"
-                      />Видалити&nbsp;учня
-                    </router-link>
-                    <div v-else><strong>13&nbsp;/&nbsp;</strong>130</div>
-                  </td>
+                  <td>2-а</td>
+                  <td>№36</td>
+                  <td>25</td>
+                  <td><strong>13&nbsp;/&nbsp;</strong>130</td>
                 </tr>
               </tbody>
               <tbody>
@@ -110,31 +75,17 @@
                   <td>
                     <label>
                       <input type="checkbox" class="filled-in" />
-                      <span class="th-text"
-                        >2&nbsp;&nbsp;Пяточкін&nbsp;Петро&nbsp;Іванович</span
-                      >
+                      <span class="th-text">2</span>
                     </label>
                   </td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td><strong>13&nbsp;/&nbsp;</strong>130</td>
+                  <td>2-а</td>
+                  <td>№36</td>
+                  <td>22</td>
+                  <td><strong>30 /</strong> 150</td>
                 </tr>
               </tbody>
               <tbody>
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -149,12 +100,19 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
               </tbody>
               <tbody>
                 <tr>
                   <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -173,12 +131,10 @@
 
 <script>
 import InfoTeacher from "./InfoTeacher";
-import CustomSelect from "./Select";
 
 export default {
   components: {
     InfoTeacher,
-    CustomSelect,
   },
   data: () => ({
     items: [
@@ -193,31 +149,9 @@ export default {
         value: 1,
       },
     ],
-    options: [
-      {
-        id: 1,
-        name: "2-б",
-      },
-      {
-        id: 2,
-        name: "3-б",
-      },
-      {
-        id: 3,
-        name: "4-б",
-      },
-      {
-        id: 4,
-        name: "Безстрашні",
-      },
-      {
-        id: 5,
-        name: "Всі класи",
-      },
-    ],
     selected: [],
     selectAll: false,
-    isActive: true,
+    searchValue: "",
   }),
   methods: {
     select() {
@@ -227,6 +161,9 @@ export default {
           this.selected.push(this.items[i].id);
         }
       }
+    },
+    getInputData() {
+      this.$router.push("/cabinetTeacherStudentClass");
     },
   },
 };
@@ -273,6 +210,36 @@ export default {
   &__button:last-child {
     margin-right: 0;
   }
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__list input {
+    max-width: 203px;
+    height: 100%;
+    border: none;
+    border: 1px solid rgba(53, 53, 53, 0.6);
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+
+    padding: 10px;
+    position: relative;
+  }
+
+  &__list i {
+    position: absolute;
+    top: 1;
+    margin-right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #002202;
+  }
 
   &__filter {
     max-width: 700px;
@@ -280,12 +247,6 @@ export default {
     align-items: center;
     margin-top: 37px;
     margin-bottom: 24px;
-  }
-
-  .select {
-    margin-right: 20px;
-    flex: 0 1 20%;
-    min-width: 182px;
   }
 
   &__filter p {
@@ -335,35 +296,19 @@ export default {
   background: #d5e7ff;
   border-radius: 10px;
 }
-
-.active-button {
-  display: flex;
-  align-items: center;
-  background: #ff7d54;
-  border-radius: 10px;
-  font-size: 16px;
-  line-height: 20px;
-  color: #ffffff;
-  padding: 10px 20px 10px 20px;
-  margin-left: 10px;
-}
-.active-button img {
-  margin-right: 14px;
-}
 strong {
   color: #62c567;
 }
-.table-body {
-  width: 100%;
-  overflow-x: auto;
-}
 table {
-  margin: 0 auto;
-  border-collapse: collapse; /* Способ отображения границы */
   width: 100%;
-  // border-spacing: 50px 50px; /* Расстояние между ячейками */
+  font-family: Montserrat;
+  background: #ffffff;
   border: 1px solid #d5e7ff;
+  box-sizing: border-box;
   border-radius: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 }
 .table-input {
   border: 1px solid #353535;
@@ -371,17 +316,9 @@ table {
   border-radius: 3px;
 }
 
-td,
-th {
-  border-bottom: 1px solid #d5e7ff;
-  padding: 12px 47px;
-}
-td {
-  font-weight: 400;
-  color: #353535;
-}
-th {
-  font-weight: 500;
+.table-body {
+  width: 100%;
+  overflow-x: auto;
 }
 
 th label {
@@ -393,6 +330,23 @@ th label {
   background-color: #353535;
 }
 
+td,
+th,
+tr {
+  // border: 1px solid #d5e7ff;
+  border-bottom: 1px solid #d5e7ff;
+  text-align: left;
+  padding: 12px 27px;
+  position: relative;
+}
+td {
+  font-weight: 400;
+  color: #353535;
+}
+th {
+  font-weight: 500;
+}
+
 .th-text {
   color: #353535;
   font-weight: 500;
@@ -400,19 +354,10 @@ th label {
   line-height: 20px;
 }
 
-.th-last-col {
-  display: flex;
-  align-items: center;
-}
-
-.table-row {
-  position: relative;
-}
-
 .arrow-down {
   position: absolute;
-  top: 40%;
-  margin-left: 7px;
+  top: 50%;
+  margin-left: 10px;
   width: 0;
   height: 0;
   border-left: 7px solid transparent;
@@ -423,6 +368,7 @@ th label {
 .search input {
   margin-right: 20px;
 
+  box-sizing: border-box;
   width: 203px;
   height: 40px;
   padding: 10px 47px;
@@ -446,9 +392,13 @@ th label {
   left: 15px;
 }
 
+.mobil {
+  display: none;
+}
+
 @media (max-width: 1440px) {
   .cabinet-teacher {
-    table {
+    .desktop {
       margin: 0 auto;
       border-collapse: separate; /* Способ отображения границы */
       width: 100%;
@@ -507,20 +457,14 @@ th label {
       align-items: center;
     }
 
-    .select {
-      margin-right: 0px;
-      margin-bottom: 10px;
-      min-width: 250px;
-    }
-
-    .search {
-      margin-right: 0px;
-      margin-bottom: 10px;
-    }
-
     .search input {
-      margin-right: 0px;
-      min-width: 250px;
+      margin-right: 0;
+    }
+
+    .mobil {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
     }
 
     td,
@@ -530,6 +474,9 @@ th label {
     }
     th {
       font-weight: 500;
+    }
+    .mobil:last-child {
+      margin-bottom: 0px;
     }
   }
 }

@@ -5,27 +5,33 @@
 
       <div class="home__title">Цікаві завдання</div>
       <div class="home__body">
-        <div
-          class="book__body"
-          v-for="(book, index) in booksInfo"
-          :key="book.id"
-        >
-          <img :src="book.photo" alt="" class="book__img" />
-          <div class="book-info">
-            <div class="book-info__title">{{ index + 1 }}. {{ book.task }}</div>
-            <div class="book-info__discription">{{ book.discription }}</div>
-            <div class="book-info__time-test">
-              Тестування на <strong>{{ book.time }} хвилин.</strong>
-            </div>
-            <div class="book-info__score">
-              Кожна правильна відповідь
-              <strong>+{{ book.score }} бал.</strong>
-            </div>
-            <div class="book-info__sum-score">
-              Ти можеш отримати <strong>{{ book.sumScore }} балів.</strong>
-            </div>
-            <div class="book-info__button">
-              <router-link to="/test">Почати завдання</router-link>
+        <div class="book">
+          <div
+            class="book__body"
+            v-for="(book, index) in booksInfo"
+            :key="book.id"
+          >
+            <img :src="book.photo" alt="" class="book__img" />
+            <div class="book-info">
+              <div class="book-info__title">
+                {{ index + 1 }}. {{ book.task }}
+              </div>
+              <div class="book-info__discription">{{ book.discription }}</div>
+              <div class="book-info__time-test">
+                Тестування на <strong>{{ book.time }} хвилин.</strong>
+              </div>
+              <div class="book-info__score">
+                Кожна правильна відповідь
+                <strong>+{{ book.score }} бал.</strong>
+              </div>
+              <div class="book-info__sum-score">
+                Ти можеш отримати <strong>{{ book.sumScore }} балів.</strong>
+              </div>
+              <div class="book-info__button">
+                <router-link class="book-info__look-task" to="/test"
+                  >Почати завдання</router-link
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -91,6 +97,7 @@ export default {
 
   &__container {
     margin: 0 80px;
+    height: 100vh;
   }
 
   // .home__title
@@ -98,33 +105,27 @@ export default {
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
-    align-items: center;
     color: #353535;
 
     margin-top: 15px;
     margin-bottom: 28px;
   }
 
-  @media (max-width: 1180px) {
-    &__body {
-      display: flex;
-      justify-content: center;
-    }
-
+  @media (max-width: 1440px) {
     &__container {
-      margin: 0 calc(20px + (80 - 20) * ((100vw - 320px) / (1180 - 320)));
+      margin: 0 calc(10px + (80 - 10) * ((100vw - 320px) / (1440 - 320)));
     }
 
     // .home__title
     &__title {
       font-weight: bold;
-      font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1180 - 320)));
-      line-height: calc(20px + (29 - 20) * ((100vw - 320px) / (1180 - 320)));
-      align-items: center;
+      font-size: calc(20px + (20 - 16) * ((100vw - 320px) / (1440 - 320)));
+      line-height: calc(22px + (29 - 22) * ((100vw - 320px) / (1440 - 320)));
+      text-align: left;
       color: #353535;
 
-      margin-top: calc(5px + (15 - 5) * ((100vw - 320px) / (1180 - 320)));
-      margin-bottom: calc(10px + (28 - 10) * ((100vw - 320px) / (1180 - 320)));
+      margin-top: calc(5px + (15 - 5) * ((100vw - 320px) / (1440 - 320)));
+      margin-bottom: calc(10px + (28 - 10) * ((100vw - 320px) / (1440 - 320)));
     }
   }
   @media (max-width: 1075px) {
@@ -132,6 +133,13 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__title {
+      text-align: center;
     }
   }
 }
@@ -139,15 +147,23 @@ export default {
   // .book__body
   &__body {
     display: flex;
+    max-width: 600px;
   }
 
   // .book__img
   &__img {
     margin-bottom: 44px;
   }
+
+  @media (max-width: 650px) {
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }
 .book-info {
-  max-width: 350px;
   margin-left: 21px;
 
   & strong {
@@ -162,11 +178,14 @@ export default {
 
   // .book-info__discription
   &__discription {
+    margin-bottom: 26px;
+  }
+
+  &__discription p {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     color: #353535;
-    margin-bottom: 26px;
   }
 
   // .book-info__time-test
@@ -193,20 +212,50 @@ export default {
     color: #353535;
     margin-bottom: 31px;
   }
+  &__button {
+    display: flex;
+    align-items: center;
+  }
   &__button a {
     text-decoration: none;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  &__look-task {
     padding: 8.5px 14px;
     color: #ffffff;
     background: #62c567;
-    border-radius: 10px;
+  }
+  &__pay {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: rgba(53, 53, 53, 0.6);
+    background: #dbefdc;
+    padding: 6.5px 14px;
+  }
+
+  @media (max-width: 650px) {
+    & {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__button a {
+      margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)));
+      text-align: center;
+      padding: calc(8px + (20 - 8) * ((100vw - 320px) / (1440 - 320)));
+    }
   }
 }
 .person-info {
   // .person-info__body
   &__body {
-    max-width: 320px;
+    max-width: 360px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -228,6 +277,15 @@ export default {
   &__description {
     line-height: 22px;
     color: #000000;
+  }
+
+  @media (max-width: 650px) {
+    &__body {
+      max-width: calc(200px + (360 - 200) * ((100vw - 320px) / (1440 - 320)));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 </style>

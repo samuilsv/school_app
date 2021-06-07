@@ -2,14 +2,14 @@
   <div class="home">
     <Header class="header" />
     <div class="main-content"><Main /></div>
-    <Footer class="footer" />
   </div>
+  <Footer class="footer" />
 </template>
 
 <script>
 // @ is an alias to /src
-import Header from "../../components/afterLog/teacher/HeaderTeacher";
-import Main from "../../components/afterLog/teacher/MainCabinetTeacherStudentMonthComponent";
+import Header from "../../components/afterLog/student/HeaderStudent";
+import Main from "../../components/afterLog/student/MainHomeStudent";
 import Footer from "../../components/Footer";
 
 export default {
@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 .home {
   margin-bottom: 170px;
 }

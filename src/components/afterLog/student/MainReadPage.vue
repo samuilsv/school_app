@@ -115,26 +115,24 @@ export default {
     font-size: 24px;
     line-height: 29px;
     color: #353535;
+    text-align: left;
 
     margin-top: 15px;
     margin-bottom: 28px;
   }
 
-  @media (max-width: 1180px) {
+  @media (max-width: 1440px) {
     &__container {
-      margin: 0 calc(10px + (80 - 10) * ((100vw - 320px) / (1180 - 320)));
+      margin: 0 calc(10px + (80 - 10) * ((100vw - 320px) / (1440 - 320)));
     }
 
     // .home__title
     &__title {
-      font-weight: bold;
-      font-size: calc(20px + (20 - 16) * ((100vw - 320px) / (1180 - 320)));
-      line-height: calc(22px + (29 - 22) * ((100vw - 320px) / (1180 - 320)));
-      text-align: center;
-      color: #353535;
+      font-size: calc(20px + (20 - 16) * ((100vw - 320px) / (1440 - 320)));
+      line-height: calc(22px + (29 - 22) * ((100vw - 320px) / (1440 - 320)));
 
-      margin-top: calc(5px + (15 - 5) * ((100vw - 320px) / (1180 - 320)));
-      margin-bottom: calc(10px + (28 - 10) * ((100vw - 320px) / (1180 - 320)));
+      margin-top: calc(5px + (15 - 5) * ((100vw - 320px) / (1440 - 320)));
+      margin-bottom: calc(10px + (28 - 10) * ((100vw - 320px) / (1440 - 320)));
     }
   }
   @media (max-width: 1075px) {
@@ -143,6 +141,11 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+  }
+  @media (max-width: 767px) {
+    &__title {
+      text-align: center;
     }
   }
 }
@@ -245,9 +248,9 @@ export default {
       align-items: center;
     }
     &__button a {
-      margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1180 - 320)));
+      margin-bottom: calc(10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)));
       text-align: center;
-      padding: calc(8px + (20 - 8) * ((100vw - 320px) / (1180 - 320)));
+      padding: calc(8px + (20 - 8) * ((100vw - 320px) / (1440 - 320)));
     }
   }
 }
@@ -283,7 +286,7 @@ export default {
 
   @media (max-width: 650px) {
     &__body {
-      max-width: calc(200px + (360 - 200) * ((100vw - 320px) / (1180 - 320)));
+      max-width: calc(200px + (360 - 200) * ((100vw - 320px) / (1440 - 320)));
       display: flex;
       flex-direction: column;
       align-items: center;

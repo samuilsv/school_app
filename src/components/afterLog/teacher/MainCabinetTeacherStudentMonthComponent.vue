@@ -2,33 +2,32 @@
   <div class="cabinet-student">
     <div class="cabinet-student__container">
       <div class="cabinet-table">
-        <div class="cabinet-student__body">
+        <div class="cabinet-student__top">
           <div class="cabinet-student__title">Кабінет</div>
-          <router-link to="#" class="cabinet-student__button active"
-            >Класи</router-link
-          >
-          <router-link to="#" class="cabinet-student__button"
-            >Статистика</router-link
-          >
+          <div class="cabinet-student__link">
+            <router-link to="#" class="cabinet-student__button active"
+              >Класи</router-link
+            >
+            <router-link to="#" class="cabinet-student__button"
+              >Статистика</router-link
+            >
+          </div>
         </div>
         <div class="cabinet-student__choise-class">
           <p>Класс Безстрашні</p>
-          <div class="input-field col s12 change-select">
-            <select ref="select">
-              <option value="" disabled selected>Діти</option>
-              <option value="1">Андрусевич Анна</option>
-              <option value="2">Босун Денис</option>
-              <option value="3">Горішко Олена</option>
-              <option value="4">Пяточкін Петро</option>
-              <option value="5">Всі</option>
-            </select>
+          <CustomSelect
+            :options="options"
+            :default="'Всі'"
+            class="select cabinet-student__element"
+          />
+          <div class="cabinet-student__link">
+            <router-link to="#" class="cabinet-student__button"
+              >Герої</router-link
+            >
+            <router-link to="#" class="cabinet-student__button active"
+              >Статистика</router-link
+            >
           </div>
-          <router-link to="#" class="cabinet-student__button"
-            >Герої</router-link
-          >
-          <router-link to="#" class="cabinet-student__button active"
-            >Статистика</router-link
-          >
         </div>
         <div class="cabinet-student__bottom">
           <!-- <Hero /> -->
@@ -38,152 +37,142 @@
                 Обери героя та часовий проміжок для показу статистики
               </div>
             </div>
-            <div class="cabinet-student__body">
-              <router-link to="#" class="cabinet-student__button"
+            <div class="cabinet-student__info">
+              <router-link
+                to="/cabinetTeacherStudentClass"
+                class="cabinet-student__button"
                 >Тиждень</router-link
               >
-              <router-link to="#" class="cabinet-student__button active"
+              <router-link
+                to="/cabinetTeacherStudentMonth"
+                class="cabinet-student__button active"
                 >Місяць</router-link
               >
               <div class="cabinet-student__calendar">
                 <img src="../../../assets/icon/Calendar.svg" alt="Calendar" />
-                <input type="text" placeholder="Лютий - березень" />
+                <input type="text" ref="datapicker" class="datepicker" />
               </div>
               <p>Сумма балів<strong>34</strong></p>
             </div>
 
-            <table class="highlight">
-              <thead>
-                <tr>
-                  <th>Дата <i class="arrow-down"></i></th>
-                  <th>Тестів</th>
-                  <th>
-                    <div class="center">
-                      <div class="circular green-col"></div>
-                      Правильно
-                    </div>
-                  </th>
-                  <th>
-                    <div class="center">
-                      <div class="circular red-col"></div>
-                      Не вірно
-                    </div>
-                  </th>
-                  <th>
-                    <div class="center">
-                      <div class="circular grey-col"></div>
-                      Не пройдено
-                    </div>
-                  </th>
-                  <th>Бали <i class="arrow-down"></i></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Лютий</td>
-                  <td>1</td>
-                  <td colspan="3">
-                    <div class="progress">
-                      <div
-                        class="determinate green-col"
-                        style="width: 70%"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>13 / <strong>20</strong></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td>Березень</td>
-                  <td>2</td>
-                  <td colspan="3">
-                    <div class="progress">
-                      <div
-                        class="determinate green-col"
-                        style="width: 30%"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>30 / <strong>32</strong></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="info-student">
-            <div class="info-student__body">
-              <div class="info-student__top">
-                <img
-                  class="info-student__photo"
-                  src="../../../assets/main/Child.png"
-                  alt="Child"
-                />
-                <button class="info-student__button">Редагувати</button>
-              </div>
-              <div class="info-student__bottom">
-                <div class="info-student__name">Петро Пяточкін</div>
-                <p>Бали<strong class="bold-green">134</strong></p>
-                <p>Школа<strong class="bold">№36</strong></p>
-                <p>Клас<strong class="bold">Безстрашні</strong></p>
-                <p>
-                  E-mail<strong class="bold">p.pyatochkin@gmail.com</strong>
-                </p>
-                <p>
-                  Пароль<strong class="bold">••••••••</strong
-                  ><img
-                    class="icon"
-                    src="../../../assets/icon/ChangePhoto.svg"
-                    alt=""
-                  /><img
-                    class="icon"
-                    src="../../../assets/icon/Copy.svg"
-                    alt=""
-                  />
-                </p>
-              </div>
+            <div class="table-body">
+              <table class="highlight desktop">
+                <thead>
+                  <tr>
+                    <th>
+                      <div class="table-row">
+                        Дата <i class="arrow-down"></i>
+                      </div>
+                    </th>
+                    <th>Тестів</th>
+                    <th>
+                      <div class="center-th">
+                        <div class="circular green-col"></div>
+                        Правильно
+                      </div>
+                    </th>
+                    <th>
+                      <div class="center-th">
+                        <div class="circular red-col"></div>
+                        Не&nbsp;вірно
+                      </div>
+                    </th>
+                    <th>
+                      <div class="center-th">
+                        <div class="circular grey-col"></div>
+                        Не&nbsp;пройдено
+                      </div>
+                    </th>
+                    <th>
+                      <div class="table-row">
+                        Бали <i class="arrow-down"></i>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Лютий</td>
+                    <td>1</td>
+                    <td colspan="3">
+                      <div class="progress">
+                        <div
+                          class="determinate green-col"
+                          style="width: 70%"
+                        ></div>
+                      </div>
+                    </td>
+                    <td>13&nbsp;/&nbsp;<strong>20</strong></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>Березень</td>
+                    <td>2</td>
+                    <td colspan="3">
+                      <div class="progress miniBar">
+                        <div
+                          class="determinate green-col miniBarProgress"
+                          style="width: 50%; left: 0; z-index: 3"
+                        ></div>
+                        <div
+                          class="determinate red-col miniBarProgress"
+                          style="width: 30%; left: 40%; z-index: 2"
+                        ></div>
+                        <div
+                          class="determinate grey-col miniBarProgress"
+                          style="width: 0%; left: 0%; z-index: 1"
+                        ></div>
+                      </div>
+                    </td>
+                    <td>30&nbsp;/&nbsp;<strong>32</strong></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
+
+          <StudentInfo />
         </div>
       </div>
     </div>
@@ -192,10 +181,90 @@
 
 <script>
 import M from "materialize-css";
+import CustomSelect from "./Select";
+import StudentInfo from "./TeacherStudentInfo";
 
 export default {
+  data: () => ({
+    options: [
+      {
+        id: 1,
+        name: "Андрусевич Анна",
+      },
+      {
+        id: 2,
+        name: "Босун Денис",
+      },
+      {
+        id: 3,
+        name: "Горішко Олена",
+      },
+      {
+        id: 4,
+        name: "Пяточкін Петро",
+      },
+      {
+        id: 5,
+        name: "Всі",
+      },
+    ],
+  }),
+  components: {
+    CustomSelect,
+    StudentInfo,
+  },
   mounted() {
-    M.FormSelect.init(this.$refs.select, {});
+    M.Datepicker.init(this.$refs.datapicker, {
+      firstDay: 1,
+      disableWeekends: true,
+      setDefaultDate: true,
+      defaultDate: new Date(),
+      onSelect: function datePickerHandler() {
+        console.log("hi");
+      },
+      format: "mmmm",
+      i18n: {
+        months: [
+          "Січень",
+          "Лютий",
+          "Березень",
+          "Квітень",
+          "Травень",
+          "Червень",
+          "Липень",
+          "Серпень",
+          "Вересень",
+          "Жовтень",
+          "Листопад",
+          "Грудень",
+        ],
+        monthsShort: [
+          "сiч",
+          "лют",
+          "бер",
+          "квiт",
+          "трав",
+          "черв",
+          "лип",
+          "серп",
+          "вер",
+          "жовт",
+          "лист",
+          "груд",
+        ],
+        weekdays: [
+          "Неділя",
+          "Понеділок",
+          "Вівторок",
+          "Середа",
+          "Четвер",
+          "П’ятниця",
+          "Субота",
+        ],
+        weekdaysShort: ["нд", "пн", "вт", "ср", "чт", "пт", "сб"],
+        weekdaysAbbrev: ["Нд", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+      },
+    });
   },
 };
 </script>
@@ -203,10 +272,36 @@ export default {
 <style lang="scss" scoped>
 .cabinet-student {
   // .cabinet-student__body
-  &__body {
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__table {
+    margin-right: 20px;
+  }
+
+  &__choise-class {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+  }
+
+  &__choise-class p {
+    flex: 0 1 15%;
+    min-width: 140px;
+  }
+
+  &__button {
+    flex: 0 1 20%;
+  }
+
+  .select {
+    margin: 0 20px;
+    flex: 0 1 20%;
+    min-width: 182px;
   }
 
   &__container {
@@ -246,12 +341,25 @@ export default {
     margin-right: 10px;
     padding: 6px 10px;
   }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &__info a {
+    flex: 0 1 10%;
+    text-align: center;
+  }
+
   &__calendar {
     display: flex;
     align-items: center;
   }
 
   &__calendar input {
+    flex: 0 1 80%;
     position: relative;
     font-weight: 500;
     font-size: 16px;
@@ -266,13 +374,17 @@ export default {
 
   &__calendar img {
     position: absolute;
-    margin-left: 19px;
+    padding-left: 19px;
+    padding-bottom: 10px;
   }
-  &__body p {
+
+  &__info p {
+    flex: 0 1 15%;
     font-weight: 500;
     color: #353535;
+    min-width: 130px;
   }
-  &__body > p > strong {
+  &__info > p > strong {
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
@@ -296,24 +408,6 @@ export default {
     display: flex;
     align-items: center;
   }
-
-  &__bottom img.icon {
-    padding: 10px 11px;
-    background: rgba(53, 53, 53, 0.6);
-    border-radius: 10px;
-    margin-left: 13px;
-    max-width: 42px;
-  }
-
-  &__bottom img.icon:last-child {
-    max-width: 50px;
-  }
-
-  &__choise-class {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
 }
 
 .active {
@@ -327,12 +421,19 @@ export default {
 strong {
   color: #ea4335;
 }
+
+.table-body {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
-  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
   background: #ffffff;
   border: 1px solid #d5e7ff;
-  box-sizing: border-box;
   border-radius: 20px;
+  min-width: 760px;
 }
 
 td,
@@ -353,7 +454,7 @@ th {
 
 .arrow-down {
   position: absolute;
-  top: 50%;
+  top: 45%;
   margin-left: 10px;
   width: 0;
   height: 0;
@@ -381,85 +482,13 @@ th {
   border: 1px solid rgba(53, 53, 53, 0.6);
 }
 
-.center {
+.center-th {
   display: flex;
 }
-.center .circular {
+.center-th .circular {
   margin-right: 5px;
 }
 
-.info-student {
-  // .info-student__body
-  &__body {
-    margin-top: 3rem;
-    background: #ffffff;
-    box-shadow: 0px 2px 25px rgba(204, 219, 224, 0.5);
-    border-radius: 20px;
-    padding: 32px 40px;
-    margin-bottom: 100px;
-  }
-
-  // .info-student__top
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  // .info-student__photo
-  &__photo {
-    margin-bottom: 25px;
-    margin-right: 30px;
-    display: block;
-    max-width: 100%;
-    height: 10%;
-  }
-
-  // .info-student__button
-  &__button {
-    position: relative;
-    font-weight: 500;
-    color: rgba(53, 53, 53, 0.6);
-    background: #e5e5e5;
-    border-radius: 10px;
-    padding: 9px 18px 9px 38px;
-    cursor: pointer;
-  }
-  &__button::before {
-    align-self: center;
-    position: absolute;
-    top: 25%;
-    left: 10%;
-    content: url("../../../assets/icon/ChangeIcon.svg");
-  }
-
-  // .info-student__name
-  &__name {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
-    margin-bottom: 25px;
-  }
-  p {
-    font-weight: 500;
-    margin-bottom: 12px;
-  }
-  p button {
-    padding-left: 20px;
-    cursor: pointer;
-    font-weight: 500;
-    color: rgba(53, 53, 53, 0.6);
-    background-color: #fff;
-    position: relative;
-  }
-  p button::before {
-    padding-right: 10px;
-    position: relative;
-    content: url("../../../assets/icon/ChangeIcon.svg");
-    top: 2px;
-    left: 0;
-  }
-}
 .bold-green {
   font-weight: bold;
   font-size: 24px;
@@ -479,27 +508,109 @@ th {
   border-radius: 20px;
   background-color: #fff;
 }
-.selected {
-  background-color: rgba(213, 231, 255, 0.5);
+
+@media (max-width: 1440px) {
+  .cabinet-student {
+    .desktop {
+      margin: 0 auto;
+      border-collapse: separate; /* Способ отображения границы */
+      width: 100%;
+      border-spacing: 2px 5px; /* Расстояние между ячейками */
+    }
+    &__container {
+      margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1180 - 320)))
+        calc(10px + (80 - 10) * ((100vw - 320px) / (1180 - 320)));
+    }
+    // .cabinet-student__title
+    &__title {
+      font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1180 - 320)));
+      line-height: calc(22px + (29 - 22) * ((100vw - 320px) / (1180 - 320)));
+      margin-right: calc(20px + (60 - 20) * ((100vw - 320px) / (1180 - 320)));
+    }
+
+    // .cabinet-student__button
+    &__button {
+      margin-right: calc(10px + (20 - 10) * ((100vw - 320px) / (1180 - 320)));
+      padding: 9px calc(10px + (14 - 10) * ((100vw - 320px) / (1180 - 320)));
+    }
+    &__info {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    td,
+    th,
+    tr {
+      // border: 1px solid #d5e7ff;
+      padding: calc(6px + (12 - 6) * ((100vw - 320px) / (1180 - 320)))
+        calc(6px + (18 - 6) * ((100vw - 320px) / (1180 - 320)));
+      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1180 - 320)));
+      line-height: calc(16px + (20 - 16) * ((100vw - 320px) / (1180 - 320)));
+    }
+  }
 }
-.change-select {
-  margin: 0 20px;
-  max-width: 203px;
-  border: 1px solid rgba(53, 53, 53, 0.6);
-  box-sizing: border-box;
-  border-radius: 10px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #353535;
-  padding: 0 10px;
+
+@media (max-width: 1235px) {
+  .cabinet-student {
+    &__choise-class {
+      display: flex;
+    }
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
-.change-select select {
-  color: #353535;
-  padding: 8px 12px;
-  border-bottom: none;
-}
-.select-wrapper input.select-dropdown {
-  border-bottom: none;
+
+@media (max-width: 767px) {
+  .cabinet-student {
+    &__choise-class {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    &__choise-class p {
+      flex: 1 1 100%;
+      margin-bottom: 10px;
+    }
+
+    &__link a {
+      flex: 1 1 50%;
+    }
+
+    .select {
+      flex: 1 1 100%;
+      margin-bottom: 20px;
+    }
+
+    &__filter {
+      justify-content: center;
+    }
+    &__info {
+      justify-content: center;
+    }
+
+    &__info a {
+      flex: 1 1 50%;
+      margin-bottom: 10px;
+    }
+
+    &__calendar input {
+      flex: 1 1 97%;
+      margin-right: 10px;
+    }
+
+    &__info p {
+      flex: 0 0 0%;
+      text-align: center;
+    }
+
+    .select {
+      flex: 0 1 30%;
+    }
+  }
 }
 </style>

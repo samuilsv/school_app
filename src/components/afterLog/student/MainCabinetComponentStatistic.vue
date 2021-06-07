@@ -1,333 +1,194 @@
 <template>
   <div class="cabinet-student">
-    <div class="cabinet-student__table">
-      <div class="cabinet-student__top">
-        <div class="cabinet-student__filter">
-          <div class="cabinet-student__message">
-            Обери героя та часовий проміжок для показу статистики
+    <div class="cabinet-table">
+      <div class="cabinet-student__bottom">
+        <!-- <Hero /> -->
+        <div class="cabinet-student__table">
+          <div class="cabinet-student__filter">
+            <div class="cabinet-student__message">
+              Обери героя та часовий проміжок для показу статистики
+            </div>
+            <p>Сумма балів<strong>34</strong></p>
           </div>
-          <p>Сумма балів<strong>34</strong></p>
-        </div>
-        <div class="cabinet-student__body">
-          <router-link
-            to="/cabinetStudentStatisticWeek"
-            class="cabinet-student__button active"
-            >Тиждень</router-link
-          >
-          <router-link
-            to="/cabinetStudentStatisticMonth"
-            class="cabinet-student__button"
-            >Місяць</router-link
-          >
-          <div class="cabinet-student__calendar cabinet-student__element">
-            <img src="../../../assets/icon/Calendar.svg" alt="Calendar" />
-            <input type="text" ref="datapicker" class="datepicker" />
+          <div class="cabinet-student__body">
+            <router-link
+              to="/cabinetStudentStatisticWeek"
+              class="cabinet-student__button active"
+              >Тиждень</router-link
+            >
+            <router-link
+              to="/cabinetStudentStatisticMonth"
+              class="cabinet-student__button"
+              >Місяць</router-link
+            >
+            <div class="cabinet-student__calendar">
+              <img src="../../../assets/icon/Calendar.svg" alt="Calendar" />
+              <input type="text" ref="datapicker" class="datepicker" />
+            </div>
+            <CustomSelect
+              :options="[
+                {
+                  id: 1,
+                  name: 'Граматика',
+                  url: require('../../../assets/headerAfterLog/Icon_1.svg'),
+                },
+                {
+                  id: 2,
+                  name: 'Гуглик',
+                  url: require('../../../assets/headerAfterLog/Icon_2.svg'),
+                },
+                {
+                  id: 3,
+                  name: 'Нишпорка',
+                  url: require('../../../assets/headerAfterLog/Icon_3.svg'),
+                },
+                {
+                  id: 4,
+                  name: 'Римуся',
+                  url: require('../../../assets/headerAfterLog/Icon_4.svg'),
+                },
+                {
+                  id: 5,
+                  name: 'Цікавинка',
+                  url: require('../../../assets/headerAfterLog/Icon_5.svg'),
+                },
+                {
+                  id: 6,
+                  name: 'Читайський',
+                  url: require('../../../assets/headerAfterLog/Icon_6.svg'),
+                },
+                {
+                  id: 7,
+                  name: 'Всі герої',
+                  url: require('../../../assets/headerAfterLog/AllPerson.svg'),
+                },
+              ]"
+              :default="'Всі герої'"
+              class="select cabinet-student__element"
+            />
           </div>
-          <CustomSelect
-            :options="[
-              {
-                id: 1,
-                name: 'Граматика',
-                url: require('../../../assets/headerAfterLog/Icon_1.svg'),
-              },
-              {
-                id: 2,
-                name: 'Гуглик',
-                url: require('../../../assets/headerAfterLog/Icon_2.svg'),
-              },
-              {
-                id: 3,
-                name: 'Нишпорка',
-                url: require('../../../assets/headerAfterLog/Icon_3.svg'),
-              },
-              {
-                id: 4,
-                name: 'Римуся',
-                url: require('../../../assets/headerAfterLog/Icon_4.svg'),
-              },
-              {
-                id: 5,
-                name: 'Цікавинка',
-                url: require('../../../assets/headerAfterLog/Icon_5.svg'),
-              },
-              {
-                id: 6,
-                name: 'Читайський',
-                url: require('../../../assets/headerAfterLog/Icon_6.svg'),
-              },
-              {
-                id: 7,
-                name: 'Всі герої',
-                url: require('../../../assets/headerAfterLog/AllPerson.svg'),
-              },
-            ]"
-            :default="'Всі герої'"
-            class="select cabinet-student__element"
-          />
+
+          <div class="table-body">
+            <table class="highlight desktop">
+              <thead>
+                <tr>
+                  <th>Дата<i class="arrow-down"></i></th>
+                  <th>Тестів</th>
+                  <th>
+                    <div class="center">
+                      <div class="circular green-col"></div>
+                      Правильно
+                    </div>
+                  </th>
+                  <th>
+                    <div class="center">
+                      <div class="circular red-col"></div>
+                      Не&nbsp;вірно
+                    </div>
+                  </th>
+                  <th>
+                    <div class="center">
+                      <div class="circular grey-col"></div>
+                      Не&nbsp;пройдено
+                    </div>
+                  </th>
+                  <th>Бали<i class="arrow-down"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>13.04.2020</td>
+                  <td>1</td>
+                  <td colspan="3">
+                    <div class="progress">
+                      <div
+                        class="determinate green-col"
+                        style="width: 70%"
+                      ></div>
+                    </div>
+                  </td>
+                  <td>13&nbsp;/&nbsp;<strong>20</strong></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>14.04.2020</td>
+                  <td>2</td>
+                  <td colspan="3">
+                    <div class="progress miniBar">
+                      <div
+                        class="determinate green-col miniBarProgress"
+                        style="width: 50%; left: 0; z-index: 3"
+                      ></div>
+                      <div
+                        class="determinate red-col miniBarProgress"
+                        style="width: 30%; left: 40%; z-index: 2"
+                      ></div>
+                      <div
+                        class="determinate grey-col miniBarProgress"
+                        style="width: 0%; left: 0%; z-index: 1"
+                      ></div>
+                    </div>
+                  </td>
+                  <td>30&nbsp;/&nbsp;<strong>32</strong></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-
-      <table class="highlight desktop">
-        <thead>
-          <tr>
-            <th>Дата <i class="arrow-down"></i></th>
-            <th>Тестів</th>
-            <th>
-              <div class="center">
-                <div class="circular green-col"></div>
-                Правильно
-              </div>
-            </th>
-            <th>
-              <div class="center">
-                <div class="circular red-col"></div>
-                Не вірно
-              </div>
-            </th>
-            <th>
-              <div class="center">
-                <div class="circular grey-col"></div>
-                Не пройдено
-              </div>
-            </th>
-            <th>Бали <i class="arrow-down"></i></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>13.04.2020</td>
-            <td>1</td>
-            <td colspan="3">
-              <div class="progress">
-                <div class="determinate green-col" style="width: 70%"></div>
-              </div>
-            </td>
-            <td>13 / <strong>20</strong></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>14.04.2020</td>
-            <td>2</td>
-            <td colspan="3">
-              <div class="progress miniBar">
-                <div
-                  class="determinate green-col miniBarProgress"
-                  style="width: 50%; left: 0; z-index: 3"
-                ></div>
-                <div
-                  class="determinate red-col miniBarProgress"
-                  style="width: 30%; left: 40%; z-index: 2"
-                ></div>
-                <div
-                  class="determinate grey-col miniBarProgress"
-                  style="width: 0%; left: 0%; z-index: 1"
-                ></div>
-              </div>
-            </td>
-            <td>30 / <strong>32</strong></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <table class="highlight mobil">
-        <thead>
-          <tr>
-            <th>Дата <i class="arrow-down"></i></th>
-            <th>Тестів</th>
-            <th>Бали <i class="arrow-down"></i></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>13.04.2020</td>
-            <td>1</td>
-            <td>13 / <strong>20</strong></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td>14.04.2020</td>
-            <td>2</td>
-            <td>30 / <strong>32</strong></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="highlight mobil">
-        <thead>
-          <tr>
-            <th>
-              <div class="center">
-                <div class="circular green-col"></div>
-                Правильно
-              </div>
-            </th>
-            <th>
-              <div class="center">
-                <div class="circular red-col"></div>
-                Не вірно
-              </div>
-            </th>
-            <th>
-              <div class="center">
-                <div class="circular grey-col"></div>
-                Не пройдено
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="3">
-              <div class="progress miniBar">
-                <div
-                  class="determinate green-col miniBarProgress"
-                  style="width: 50%; left: 0; z-index: 3"
-                ></div>
-                <div
-                  class="determinate red-col miniBarProgress"
-                  style="width: 30%; left: 40%; z-index: 2"
-                ></div>
-                <div
-                  class="determinate grey-col miniBarProgress"
-                  style="width: 0%; left: 0%; z-index: 1"
-                ></div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td colspan="3">
-              <div class="progress miniBar">
-                <div
-                  class="determinate green-col miniBarProgress"
-                  style="width: 50%; left: 0; z-index: 3"
-                ></div>
-                <div
-                  class="determinate red-col miniBarProgress"
-                  style="width: 30%; left: 40%; z-index: 2"
-                ></div>
-                <div
-                  class="determinate grey-col miniBarProgress"
-                  style="width: 0%; left: 0%; z-index: 1"
-                ></div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </div>
 </template>
 
 <script>
-import CustomSelect from "../Select";
+import CustomSelect from "./Select";
 import M from "materialize-css";
 
 export default {
   data: () => ({
     options: [],
   }),
-  components: {
-    CustomSelect,
-  },
   mounted() {
     M.Datepicker.init(this.$refs.datapicker, {
       firstDay: 1,
@@ -381,6 +242,9 @@ export default {
       },
     });
   },
+  components: {
+    CustomSelect,
+  },
 };
 </script>
 
@@ -389,8 +253,20 @@ export default {
   // .cabinet-student__body
   &__body {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 15px;
+  }
+
+  &__container {
+    margin: 0px 80px 0 80px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
   }
 
   // .cabinet-student__title
@@ -399,6 +275,7 @@ export default {
     font-size: 24px;
     line-height: 29px;
     color: #353535;
+    margin-right: 60px;
   }
 
   // .cabinet-student__button
@@ -496,7 +373,32 @@ export default {
     margin-bottom: 20px;
   }
 
-  @media (max-width: 1180px) {
+  .mobil {
+    display: none;
+  }
+
+  @media (max-width: 1440px) {
+    .desktop {
+      margin: 0 auto;
+      border-collapse: separate; /* Способ отображения границы */
+      width: 100%;
+    }
+    &__container {
+      margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)))
+        calc(10px + (80 - 10) * ((100vw - 320px) / (1440 - 320)));
+    }
+    // .cabinet-student__title
+    &__title {
+      font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1440 - 320)));
+      line-height: calc(22px + (29 - 22) * ((100vw - 320px) / (1440 - 320)));
+      margin-right: calc(20px + (60 - 20) * ((100vw - 320px) / (1440 - 320)));
+    }
+
+    // .cabinet-student__button
+    &__button {
+      margin-right: calc(10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)));
+      padding: 9px calc(10px + (14 - 10) * ((100vw - 320px) / (1440 - 320)));
+    }
     &__body {
       display: flex;
       flex-wrap: wrap;
@@ -516,30 +418,20 @@ export default {
       flex: 0 1 40%;
     }
 
-    .desktop {
-      margin: 0 auto;
-      border-collapse: separate; /* Способ отображения границы */
-      width: 100%;
-      border-spacing: 2px 5px; /* Расстояние между ячейками */
-    }
-
     td,
     th,
     tr {
-      // border: 1px solid #d5e7ff;
-      border-bottom: 1px solid #d5e7ff;
-      padding: calc(6px + (12 - 6) * ((100vw - 320px) / (1180 - 320)))
-        calc(6px + (18 - 6) * ((100vw - 320px) / (1180 - 320)));
-      position: relative;
-      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1180 - 320)));
-      line-height: calc(16px + (20 - 16) * ((100vw - 320px) / (1180 - 320)));
+      padding: calc(6px + (12 - 6) * ((100vw - 320px) / (1440 - 320)))
+        calc(6px + (18 - 6) * ((100vw - 320px) / (1440 - 320)));
+      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1440 - 320)));
+      line-height: calc(16px + (20 - 16) * ((100vw - 320px) / (1440 - 320)));
     }
-    td {
-      font-weight: 400;
-      color: #353535;
-    }
-    th {
-      font-weight: 500;
+  }
+
+  @media (max-width: 1235px) {
+    &__bottom {
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -562,13 +454,22 @@ export default {
       flex: 0 1 50%;
       align-self: flex-end;
     }
-    .mobil {
-      display: block;
-    }
-    .desktop {
-      display: none;
-    }
   }
+}
+
+.miniBarProgress {
+  height: 100%;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+}
+.miniBar {
+  height: 0.5rem;
+  position: relative;
+  width: -webkit-calc(100% - 2rem);
+  width: -moz-calc(100% - 2rem);
+  width: calc(100% - 2rem);
+  margin-right: 0.5rem;
 }
 
 .active {
@@ -582,15 +483,18 @@ export default {
 strong {
   color: #ea4335;
 }
+
+.table-body {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
-  font-family: arial, sans-serif;
+  min-width: 770px;
   background: #ffffff;
   border: 1px solid #d5e7ff;
   box-sizing: border-box;
   border-radius: 20px;
-  border-collapse: separate; /* Способ отображения границы */
-  width: 100%; /* Ширина таблицы */
-  border-spacing: 2px 5px; /* Расстояние между ячейками */
 }
 
 td,
@@ -609,15 +513,12 @@ th {
   font-weight: 500;
 }
 
-.mobil {
-  display: none;
-}
-
 .arrow-down {
   position: absolute;
-  top: 1;
-  margin-top: 10px;
+  top: 50%;
   margin-left: 10px;
+  width: 0;
+  height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-top: 7px solid #002202;
@@ -638,8 +539,7 @@ th {
 }
 
 .grey-col {
-  background-color: rgba(53, 53, 53, 0.6);
-  border: 1px solid rgba(53, 53, 53, 0.6);
+  background-color: rgb(134, 134, 134);
 }
 
 .center {

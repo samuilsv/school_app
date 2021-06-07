@@ -45,131 +45,64 @@
       <div class="cabinet-student__message">Бали набрали за завдання</div>
       <p><strong>34</strong></p>
     </div>
-    <table class="highlight desktop">
-      <tr>
-        <th>Дата <i class="arrow-down"></i></th>
-        <th>Герой <i class="arrow-down"></i></th>
-        <th>Назва <i class="arrow-down"></i></th>
-        <th>Клас <i class="arrow-down"></i></th>
-        <th>Бали <i class="arrow-down"></i></th>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>п. Читайський</td>
-        <td>Рима на А</td>
-        <td>3-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>Цікавинка</td>
-        <td>Смола</td>
-        <td>1-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>п. Читайський</td>
-        <td>Рима на А</td>
-        <td>3-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>Цікавинка</td>
-        <td>Смола</td>
-        <td>1-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>п. Читайський</td>
-        <td>Рима на А</td>
-        <td>3-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>Цікавинка</td>
-        <td>Смола</td>
-        <td>1-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-    </table>
-
-    <table class="highlight mobil">
-      <tr>
-        <th>Дата <i class="arrow-down"></i></th>
-        <th>Герой <i class="arrow-down"></i></th>
-        <th>Назва <i class="arrow-down"></i></th>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>п. Читайський</td>
-        <td>Рима на А</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>Цікавинка</td>
-        <td>Смола</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>п. Читайський</td>
-        <td>Рима на А</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>Цікавинка</td>
-        <td>Смола</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>п. Читайський</td>
-        <td>Рима на А</td>
-      </tr>
-      <tr>
-        <td>13.05.2020</td>
-        <td>Цікавинка</td>
-        <td>Смола</td>
-      </tr>
-    </table>
-
-    <table class="highlight mobil">
-      <tr>
-        <th>Клас <i class="arrow-down"></i></th>
-        <th>Бали <i class="arrow-down"></i></th>
-      </tr>
-      <tr>
-        <td>3-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>1-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>3-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>1-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>3-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-      <tr>
-        <td>1-й клас</td>
-        <td><strong>13 /</strong> 130</td>
-      </tr>
-    </table>
+    <div class="table-body">
+      <table class="highlight desktop">
+        <tr>
+          <th>Дата <i class="arrow-down"></i></th>
+          <th>Герой <i class="arrow-down"></i></th>
+          <th>Назва <i class="arrow-down"></i></th>
+          <th>Клас <i class="arrow-down"></i></th>
+          <th>Бали <i class="arrow-down"></i></th>
+        </tr>
+        <tr>
+          <td>13.05.2020</td>
+          <td>п. Читайський</td>
+          <td>Рима на А</td>
+          <td>3-й клас</td>
+          <td><strong>13 /</strong> 130</td>
+        </tr>
+        <tr>
+          <td>13.05.2020</td>
+          <td>Цікавинка</td>
+          <td>Смола</td>
+          <td>1-й клас</td>
+          <td><strong>13 /</strong> 130</td>
+        </tr>
+        <tr>
+          <td>13.05.2020</td>
+          <td>п. Читайський</td>
+          <td>Рима на А</td>
+          <td>3-й клас</td>
+          <td><strong>13 /</strong> 130</td>
+        </tr>
+        <tr>
+          <td>13.05.2020</td>
+          <td>Цікавинка</td>
+          <td>Смола</td>
+          <td>1-й клас</td>
+          <td><strong>13 /</strong> 130</td>
+        </tr>
+        <tr>
+          <td>13.05.2020</td>
+          <td>п. Читайський</td>
+          <td>Рима на А</td>
+          <td>3-й клас</td>
+          <td><strong>13 /</strong> 130</td>
+        </tr>
+        <tr>
+          <td>13.05.2020</td>
+          <td>Цікавинка</td>
+          <td>Смола</td>
+          <td>1-й клас</td>
+          <td><strong>13 /</strong> 130</td>
+        </tr>
+      </table>
+    </div>
   </div>
 </template>
 
 <script>
-import CustomSelect from "../Select";
+import CustomSelect from "./Select";
 export default {
   components: {
     CustomSelect,
@@ -275,7 +208,7 @@ export default {
     display: none;
   }
 
-  @media (max-width: 1180px) {
+  @media (max-width: 1440px) {
     .desktop {
       margin: 0 auto;
       border-collapse: separate; /* Способ отображения границы */
@@ -372,8 +305,14 @@ export default {
 strong {
   color: #62c567;
 }
+
+.table-body {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
-  font-family: arial, sans-serif;
+  min-width: 770px;
   background: #ffffff;
   border: 1px solid #d5e7ff;
   box-sizing: border-box;

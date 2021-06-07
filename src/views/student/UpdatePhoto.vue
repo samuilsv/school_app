@@ -9,11 +9,11 @@
           <div class="modal__title">Оновити фото</div>
           <div class="modal__action">
             <button class="modal__choise">
-              <img src="../assets/icon/UploadPhoto.svg" alt="ChangePhoto" />
+              <img src="../../assets/icon/UploadPhoto.svg" alt="ChangePhoto" />
               <p>Завантажити <br />нове фото</p>
             </button>
             <router-link to="/changePhotoStudent" class="modal__choise">
-              <img src="../assets/icon/ChangePhoto.svg" alt="ChangePhoto" />
+              <img src="../../assets/icon/ChangePhoto.svg" alt="ChangePhoto" />
               <p>Редагувати <br />поточне фото</p>
             </router-link>
           </div>
@@ -30,14 +30,11 @@
 <style lang="scss" scoped>
 .modal-mask {
   width: 100%;
-  min-height: 100%;
-  overflow-y: auto;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  position: fixed;
   box-sizing: border-box;
   background-color: rgba(41, 41, 41, 0.5);
   transition: opacity 0.3s ease;

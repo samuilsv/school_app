@@ -80,262 +80,121 @@
               />
             </div>
 
-            <table class="highlight desktop">
-              <thead>
-                <tr>
-                  <th>Дата <i class="arrow-down"></i></th>
-                  <th>Тестів</th>
-                  <th>
-                    <div class="center">
-                      <div class="circular green-col"></div>
-                      Правильно
-                    </div>
-                  </th>
-                  <th>
-                    <div class="center">
-                      <div class="circular red-col"></div>
-                      Не вірно
-                    </div>
-                  </th>
-                  <th>
-                    <div class="center">
-                      <div class="circular grey-col"></div>
-                      Не пройдено
-                    </div>
-                  </th>
-                  <th>Бали <i class="arrow-down"></i></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Лютий</td>
-                  <td>1</td>
-                  <td colspan="3">
-                    <div class="progress miniBar">
-                      <div
-                        class="determinate green-col miniBarProgress"
-                        style="width: 50%; left: 0; z-index: 3"
-                      ></div>
-                      <div
-                        class="determinate red-col miniBarProgress"
-                        style="width: 30%; left: 40%; z-index: 2"
-                      ></div>
-                      <div
-                        class="determinate grey-col miniBarProgress"
-                        style="width: 0%; left: 0%; z-index: 1"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>13 / <strong>20</strong></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td>Березень</td>
-                  <td>2</td>
-                  <td colspan="3">
-                    <div class="progress miniBar">
-                      <div
-                        class="determinate green-col miniBarProgress"
-                        style="width: 75%; left: 0; z-index: 3"
-                      ></div>
-                      <div
-                        class="determinate red-col miniBarProgress"
-                        style="width: 30%; left: 55%; z-index: 2"
-                      ></div>
-                      <div
-                        class="determinate grey-col miniBarProgress"
-                        style="width: 20%; left: 70%; z-index: 1"
-                      ></div>
-                    </div>
-                  </td>
-                  <td>30 / <strong>32</strong></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="highlight mobil">
-              <thead>
-                <tr>
-                  <th>Дата <i class="arrow-down"></i></th>
-                  <th>Тестів</th>
-                  <th>Бали <i class="arrow-down"></i></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>13.04.2020</td>
-                  <td>1</td>
-                  <td>13 / <strong>20</strong></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td>14.04.2020</td>
-                  <td>2</td>
-                  <td>30 / <strong>32</strong></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="highlight mobil">
-              <thead>
-                <tr>
-                  <th>
-                    <div class="center">
-                      <div class="circular green-col"></div>
-                      Правильно
-                    </div>
-                  </th>
-                  <th>
-                    <div class="center">
-                      <div class="circular red-col"></div>
-                      Не вірно
-                    </div>
-                  </th>
-                  <th>
-                    <div class="center">
-                      <div class="circular grey-col"></div>
-                      Не пройдено
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colspan="3">
-                    <div class="progress miniBar">
-                      <div
-                        class="determinate green-col miniBarProgress"
-                        style="width: 50%; left: 0; z-index: 3"
-                      ></div>
-                      <div
-                        class="determinate red-col miniBarProgress"
-                        style="width: 30%; left: 40%; z-index: 2"
-                      ></div>
-                      <div
-                        class="determinate grey-col miniBarProgress"
-                        style="width: 0%; left: 0%; z-index: 1"
-                      ></div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td colspan="3">
-                    <div class="progress miniBar">
-                      <div
-                        class="determinate green-col miniBarProgress"
-                        style="width: 50%; left: 0; z-index: 3"
-                      ></div>
-                      <div
-                        class="determinate red-col miniBarProgress"
-                        style="width: 30%; left: 40%; z-index: 2"
-                      ></div>
-                      <div
-                        class="determinate grey-col miniBarProgress"
-                        style="width: 0%; left: 0%; z-index: 1"
-                      ></div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-body">
+              <table class="highlight desktop">
+                <thead>
+                  <tr>
+                    <th>Дата<i class="arrow-down"></i></th>
+                    <th>Тестів</th>
+                    <th>
+                      <div class="center">
+                        <div class="circular green-col"></div>
+                        Правильно
+                      </div>
+                    </th>
+                    <th>
+                      <div class="center">
+                        <div class="circular red-col"></div>
+                        Не&nbsp;вірно
+                      </div>
+                    </th>
+                    <th>
+                      <div class="center">
+                        <div class="circular grey-col"></div>
+                        Не&nbsp;пройдено
+                      </div>
+                    </th>
+                    <th>Бали<i class="arrow-down"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Лютий</td>
+                    <td>1</td>
+                    <td colspan="3">
+                      <div class="progress miniBar">
+                        <div
+                          class="determinate green-col miniBarProgress"
+                          style="width: 50%; left: 0; z-index: 3"
+                        ></div>
+                        <div
+                          class="determinate red-col miniBarProgress"
+                          style="width: 30%; left: 40%; z-index: 2"
+                        ></div>
+                        <div
+                          class="determinate grey-col miniBarProgress"
+                          style="width: 0%; left: 0%; z-index: 1"
+                        ></div>
+                      </div>
+                    </td>
+                    <td>13&nbsp;/&nbsp;<strong>20</strong></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>Березень</td>
+                    <td>2</td>
+                    <td colspan="3">
+                      <div class="progress miniBar">
+                        <div
+                          class="determinate green-col miniBarProgress"
+                          style="width: 75%; left: 0; z-index: 3"
+                        ></div>
+                        <div
+                          class="determinate red-col miniBarProgress"
+                          style="width: 30%; left: 55%; z-index: 2"
+                        ></div>
+                        <div
+                          class="determinate grey-col miniBarProgress"
+                          style="width: 20%; left: 70%; z-index: 1"
+                        ></div>
+                      </div>
+                    </td>
+                    <td>30&nbsp;/&nbsp;<strong>32</strong></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <StudentInfo class="student-info" />
@@ -346,7 +205,7 @@
 </template>
 
 <script>
-import CustomSelect from "../Select";
+import CustomSelect from "./Select";
 import StudentInfo from "./StudentInfoBlock";
 import M from "materialize-css";
 
@@ -421,10 +280,18 @@ export default {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 15px;
   }
 
   &__container {
-    margin: 0px 80px 0 80px;
+    margin: 0px 80px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 38px;
   }
 
   // .cabinet-student__title
@@ -434,13 +301,6 @@ export default {
     line-height: 29px;
     color: #353535;
     margin-right: 60px;
-  }
-
-  &__top {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: 30px;
   }
 
   // .cabinet-student__button
@@ -542,28 +402,26 @@ export default {
     display: none;
   }
 
-  @media (max-width: 1180px) {
+  @media (max-width: 1440px) {
     .desktop {
       margin: 0 auto;
       border-collapse: separate; /* Способ отображения границы */
       width: 100%;
-      border-spacing: 2px 5px; /* Расстояние между ячейками */
     }
     &__container {
-      margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1180 - 320)))
-        calc(10px + (80 - 10) * ((100vw - 320px) / (1180 - 320)));
+      margin: 0 calc(10px + (80 - 10) * ((100vw - 320px) / (1440 - 320)));
     }
     // .cabinet-student__title
     &__title {
-      font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1180 - 320)));
-      line-height: calc(22px + (29 - 22) * ((100vw - 320px) / (1180 - 320)));
-      margin-right: calc(20px + (60 - 20) * ((100vw - 320px) / (1180 - 320)));
+      font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1440 - 320)));
+      line-height: calc(22px + (29 - 22) * ((100vw - 320px) / (1440 - 320)));
+      margin-right: calc(20px + (60 - 20) * ((100vw - 320px) / (1440 - 320)));
     }
 
     // .cabinet-student__button
     &__button {
-      margin-right: calc(10px + (20 - 10) * ((100vw - 320px) / (1180 - 320)));
-      padding: 9px calc(10px + (14 - 10) * ((100vw - 320px) / (1180 - 320)));
+      margin-right: calc(10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)));
+      padding: 9px calc(10px + (14 - 10) * ((100vw - 320px) / (1440 - 320)));
     }
     &__body {
       display: flex;
@@ -584,30 +442,13 @@ export default {
       flex: 0 1 40%;
     }
 
-    .desktop {
-      margin: 0 auto;
-      border-collapse: separate; /* Способ отображения границы */
-      width: 100%;
-      border-spacing: 2px 5px; /* Расстояние между ячейками */
-    }
-
     td,
     th,
     tr {
-      // border: 1px solid #d5e7ff;
-      border-bottom: 1px solid #d5e7ff;
-      padding: calc(6px + (12 - 6) * ((100vw - 320px) / (1180 - 320)))
-        calc(6px + (18 - 6) * ((100vw - 320px) / (1180 - 320)));
-      position: relative;
-      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1180 - 320)));
-      line-height: calc(16px + (20 - 16) * ((100vw - 320px) / (1180 - 320)));
-    }
-    td {
-      font-weight: 400;
-      color: #353535;
-    }
-    th {
-      font-weight: 500;
+      padding: calc(6px + (12 - 6) * ((100vw - 320px) / (1440 - 320)))
+        calc(6px + (18 - 6) * ((100vw - 320px) / (1440 - 320)));
+      font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1440 - 320)));
+      line-height: calc(16px + (20 - 16) * ((100vw - 320px) / (1440 - 320)));
     }
   }
 
@@ -636,15 +477,6 @@ export default {
     .select {
       flex: 0 1 50%;
       align-self: flex-end;
-    }
-    .mobil {
-      display: block;
-    }
-    .mobil {
-      display: block;
-    }
-    .desktop {
-      display: none;
     }
   }
 }
@@ -675,8 +507,14 @@ export default {
 strong {
   color: #ea4335;
 }
+
+.table-body {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
-  font-family: arial, sans-serif;
+  min-width: 770px;
   background: #ffffff;
   border: 1px solid #d5e7ff;
   box-sizing: border-box;

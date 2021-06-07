@@ -38,6 +38,7 @@
     color: #353535;
     font-weight: 500;
     margin-right: 18px;
+    min-width: 122px;
   }
 
   &__img {

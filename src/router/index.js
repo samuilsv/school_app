@@ -56,14 +56,25 @@ const routes = [
       ),
   },
   {
-    path: "/homeAfterLogStudent",
-    name: "HomeAfterLogStudent",
+    path: "/homeChitaisky",
+    name: "HomeChitaisky",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(
-        /* webpackChunkName: "HomeAfterLogStudent" */ "../views/student/HomeAfterLogStudent.vue"
+        /* webpackChunkName: "HomeChitaisky" */ "../views/student/HomeChitaisky.vue"
+      ),
+  },
+  {
+    path: "/homeRemusia",
+    name: "HomeRemusia",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(
+        /* webpackChunkName: "HomeRemusia" */ "../views/student/HomeRemusia.vue"
       ),
   },
   {
@@ -117,14 +128,14 @@ const routes = [
       ),
   },
   {
-    path: "/cabinetCabinetTeacher",
-    name: "CabinetCabinetTeacher",
+    path: "/cabinetTeacher",
+    name: "CabinetTeacher",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(
-        /* webpackChunkName: "CabinetCabinetTeacher" */ "../views/teacher/CabinetCabinetTeacher.vue"
+        /* webpackChunkName: "CabinetTeacher" */ "../views/teacher/CabinetTeacher.vue"
       ),
   },
   {
@@ -166,13 +177,22 @@ const routes = [
       ),
   },
   {
-    path: "/updatePhoto",
-    name: "UpdatePhoto",
+    path: "/updatePhotoTeacher",
+    name: "UpdatePhotoTeacher",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* UpdatePhoto: "log" */ "../views/UpdatePhoto.vue"),
+      import(/* UpdatePhoto: "log" */ "../views/teacher/UpdatePhoto.vue"),
+  },
+  {
+    path: "/updatePhotoStudent",
+    name: "UpdatePhotoStudent",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* UpdatePhoto: "log" */ "../views/student/UpdatePhoto.vue"),
   },
   {
     path: "/changePhotoStudent",

@@ -2,19 +2,32 @@
   <div class="modal-mask">
     <div class="modal-wrapper">
       <div class="modal-container">
-        <router-link to="/" class="modal-header"></router-link>
+        <div class="modal-close">
+          <router-link to="/" class="modal-header"></router-link>
+        </div>
         <div class="modal__body">
           <div class="modal__title">Оновити фото</div>
           <div class="modal__action">
             <img src="../../assets/main/TeacherPhoto.jpg" alt="TeacherPhoto" />
-            <div class="modal__zoom">
-              <i class="modal__plus"></i>
-              <i class="modal__scale"></i>
-              <i class="modal__minus"></i>
-            </div>
+            <form action="#">
+              <div class="modal__zoom range-field">
+                <span class="modal__minus"></span>
+                <input
+                  type="range"
+                  ref="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  class="modal__scale"
+                />
+                <span class="modal__plus"></span>
+              </div>
+            </form>
           </div>
           <div class="modal__button">
-            <button class="back">Скасувати</button>
+            <router-link to="/updatePhotoTeacher" class="back"
+              >Скасувати</router-link
+            >
             <button type="submit" class="save">Зберегти</button>
           </div>
         </div>
@@ -28,7 +41,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -37,6 +49,7 @@
 }
 
 .modal-container {
+  position: relative;
   max-width: 472px;
   background: #ffffff;
   box-shadow: 0px 2px 25px rgba(204, 219, 224, 0.5);
@@ -45,12 +58,16 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.modal-close {
+  position: absolute;
+  top: 5%;
+  left: 94%;
+}
+
 .modal-header {
   opacity: 0.4;
   width: 24px;
   height: 24px;
-  top: 1.5rem;
-  left: 27.5rem;
   position: relative;
   z-index: 3;
   border-radius: 6px;
@@ -67,17 +84,17 @@
 }
 
 .modal-header::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  transform: rotate(45deg);
-  left: -12px;
-}
-
-.modal-header::after {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  right: -13px;
+  left: -13px;
+}
+
+.modal-header::after {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  right: -12px;
 }
 
 .modal-enter .modal-container,
@@ -145,6 +162,7 @@
     height: 20px;
     top: 50%;
     left: 0;
+    cursor: pointer;
   }
   &__plus::before,
   &__plus::after {
@@ -154,15 +172,15 @@
     content: "";
   }
   &__plus::before {
-    top: 50%;
-    left: 12.7rem;
-    width: 16px;
+    top: 55%;
+    left: 0.7rem;
+    width: 17px;
     height: 3px;
     margin-top: -2px;
   }
   &__plus::after {
-    top: 10%;
-    left: 13rem;
+    top: 13%;
+    left: 1rem;
     width: 3px;
     height: 16px;
     margin-left: 2px;
@@ -173,6 +191,7 @@
     height: 24px;
     top: 0;
     left: 0;
+    cursor: pointer;
   }
   &__minus::before,
   &__minus::after {
@@ -182,43 +201,11 @@
     content: "";
   }
   &__minus::before {
-    top: 50%;
-    left: -13rem;
+    top: 55%;
+    left: -0.5rem;
     width: 16px;
     height: 3px;
     margin-top: -2px;
-  }
-
-  &__scale {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-
-  &__scale::before,
-  &__scale::after {
-    position: absolute;
-    content: "";
-  }
-  &__scale::before {
-    border-radius: 20px;
-    background-color: #b4b1b1;
-    top: 50%;
-    left: -10rem;
-    width: 320px;
-    height: 3px;
-    margin-top: -2px;
-  }
-  &__scale::after {
-    border-radius: 20px;
-    top: -1rem;
-    background: #ffffff;
-    box-shadow: 0px 2px 15px rgba(196, 196, 196, 0.5);
-    left: -10rem;
-    width: 28px;
-    height: 28px;
   }
 }
 
@@ -233,5 +220,76 @@
   background: #aa5d81;
   border-radius: 10px;
   color: #ffffff;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  box-shadow: 0px 2px 15px rgba(196, 196, 196, 0.5);
+}
+input[type="range"]::-ms-thumb {
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  box-shadow: 0px 2px 15px rgba(196, 196, 196, 0.5);
+}
+
+/***** These are to edit the thumb and the text inside the thumb *****/
+input[type="range"] + .thumb {
+  background-color: #dedede;
+}
+input[type="range"] + .thumb.active .value {
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  box-shadow: 0px 2px 15px rgba(196, 196, 196, 0.5);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  box-shadow: 0px 2px 15px rgba(196, 196, 196, 0.5);
+}
+.modal__scale {
+  width: 307px;
+}
+
+@media (max-width: 1440px) {
+  .modal {
+    // .modal__title
+    &__title {
+      font-weight: bold;
+      font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (1440 - 320)));
+      line-height: calc(26px + (44 - 26) * ((100vw - 320px) / (1440 - 320)));
+      color: #353535;
+      margin: 36px calc(70px + (97 - 70) * ((100vw - 320px) / (1440 - 320)));
+    }
+
+    &__action img {
+      margin-bottom: calc(10px + (30 - 10) * ((100vw - 320px) / (1440 - 320)));
+    }
+
+    // .modal__button
+    &__button {
+      align-self: center;
+      margin-top: calc(15px + (40 - 15) * ((100vw - 320px) / (1440 - 320)));
+    }
+    &__button button {
+      padding: calc(4px + (8 - 4) * ((100vw - 320px) / (1440 - 320)))
+        calc(20px + (28 - 20) * ((100vw - 320px) / (1440 - 320)));
+
+      margin-right: calc(10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)));
+      margin-bottom: calc(20px + (58 - 20) * ((100vw - 320px) / (1440 - 320)));
+    }
+    &__zoom {
+      max-width: calc(250px + (400 - 250) * ((100vw - 320px) / (1440 - 320)));
+    }
+  }
+
+  .modal__scale {
+    width: calc(250px + (307 - 250) * ((100vw - 320px) / (1440 - 320)));
+  }
 }
 </style>

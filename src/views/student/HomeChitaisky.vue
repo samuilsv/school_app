@@ -9,7 +9,6 @@
 <script>
 // @ is an alias to /src
 import Header from "../../components/afterLog/student/HeaderStudent";
-// import Main from "../components/afterLog/MainHomeStudent";
 import Main from "../../components/afterLog/student/MainReadPage";
 import Footer from "../../components/Footer";
 
@@ -25,23 +24,11 @@ export default {
 
 <style>
 .home {
-  max-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.header {
-  /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
-  flex: 0 0 auto;
-  margin-bottom: 30px;
-}
-.main-content {
-  /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
-  flex: 1 0 auto;
+  margin-bottom: 170px;
 }
 .footer {
-  /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
-  height: 60px;
-  flex: 0 0 auto;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 </style>

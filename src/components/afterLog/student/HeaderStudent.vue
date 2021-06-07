@@ -1,33 +1,48 @@
 <template>
-  <header class="header" :class="{ active: isActive }">
-    <div class="header__container">
-      <div class="header__wrapper">
+  <header class="header">
+    <div class="header__container" :class="{ active: isActive }">
+      <div class="header__wrapper" :class="{ active: isActive }">
         <div class="header__left">
-          <div
-            class="header__burger"
-            :class="{ active: isActive }"
-            @click="isActive = !isActive"
-          >
-            <span></span>
+          <div class="header__mobil">
+            <router-link to="/" class="header__logo"></router-link>
+
+            <a
+              class="header__burger"
+              @click="isActive = !isActive"
+              :class="{ active: isActive }"
+            >
+              <span></span>
+            </a>
           </div>
-          <div class="header__logo">
-            <router-link to="/"></router-link>
-          </div>
-          <div class="header__people">
+          <div class="header__people" :class="{ active: isActive }">
             <div v-for="person in personsNav" :key="person.id">
-              <img
-                class="header__person"
-                :src="person.photo"
-                :alt="person.id"
-              />
+              <router-link :to="person.url">
+                <img
+                  class="header__person"
+                  :src="person.photo"
+                  :alt="person.id"
+                />
+              </router-link>
             </div>
           </div>
         </div>
 
-        <div class="person-info">
-          <Search class="search" />
+        <div class="person-info" :class="{ active: isActive }">
+          <div class="search" :class="{ active: isActive }">
+            <img
+              src="../../../assets/headerAfterLog/Search.svg"
+              class="search-icon"
+              @click="getInputData"
+            />
+            <input
+              placeholder="Пошук"
+              v-model="searchValue"
+              @keyup.enter="getInputData"
+            />
+          </div>
           <a
             class="person-dropdown dropdown-trigger"
+            :class="{ active: isActive }"
             ref="dropdown"
             href="#"
             data-target="dropdown1"
@@ -71,21 +86,25 @@
 </template>
 
 <script>
-import Search from "../SearchInput";
 import M from "materialize-css";
 
 export default {
-  components: {
-    Search,
-  },
   data: () => ({
     personsNav: [
-      { id: 1, photo: require("@/assets/headerAfterLog/Icon_1.svg") },
-      { id: 2, photo: require("@/assets/headerAfterLog/Icon_2.svg") },
-      { id: 3, photo: require("@/assets/headerAfterLog/Icon_3.svg") },
-      { id: 4, photo: require("@/assets/headerAfterLog/Icon_4.svg") },
-      { id: 5, photo: require("@/assets/headerAfterLog/Icon_5.svg") },
-      { id: 6, photo: require("@/assets/headerAfterLog/Icon_6.svg") },
+      { id: 1, photo: require("@/assets/headerAfterLog/Icon_1.svg"), url: "#" },
+      { id: 2, photo: require("@/assets/headerAfterLog/Icon_2.svg"), url: "#" },
+      { id: 3, photo: require("@/assets/headerAfterLog/Icon_3.svg"), url: "#" },
+      {
+        id: 4,
+        photo: require("@/assets/headerAfterLog/Icon_4.svg"),
+        url: "/HomeRemusia",
+      },
+      { id: 5, photo: require("@/assets/headerAfterLog/Icon_5.svg"), url: "#" },
+      {
+        id: 6,
+        photo: require("@/assets/headerAfterLog/Icon_6.svg"),
+        url: "/HomeChitaisky",
+      },
     ],
     isActive: false,
   }),
@@ -98,24 +117,20 @@ export default {
 </script>
 
 <style scoped>
-.header .header__wrapper {
+.header__wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-.header .header__ctr {
-  display: flex;
-}
+
 .header__container {
   margin: 20px 80px 0 80px;
-  max-width: 1180px;
-  max-width: 100%;
 }
 .header__left {
   display: flex;
   justify-content: space-around;
-  max-width: 700px;
+  max-width: 650px;
 }
 .header__logo {
   width: 155px;
@@ -126,15 +141,19 @@ export default {
 }
 .header__people {
   display: flex;
-  align-items: center;
-}
-.header__people div {
-  margin-right: 10px;
 }
 .header__person {
   display: block;
-  max-width: 100%;
+  max-width: calc(70px + (100 - 50) * ((100vw - 320px) / (1400 - 320)));
   height: auto;
+}
+
+.header__load {
+  display: flex;
+  padding: 10px;
+  margin-right: 20px;
+  background: #62c567;
+  border-radius: 10px;
 }
 .arrow-down {
   margin-left: 7px;
@@ -147,11 +166,11 @@ export default {
 .person-info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.header__burger {
-  display: none;
+.person-dropdown {
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-content {
@@ -171,81 +190,67 @@ export default {
   margin-right: 15px;
 }
 
-@media (max-width: 767px) {
-  .header__container {
-    margin: 10px;
-    max-width: none;
-  }
+.color-gray {
+  color: #c4c4c4;
+}
 
-  .header__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+.search {
+  display: flex;
+  align-items: center;
+}
+.search input {
+  box-sizing: border-box;
+  width: 203px;
+  height: 40px;
+  padding: 10px 47px;
+  font-size: 16px;
+  line-height: 20px;
 
-  .header__left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
+  border: none;
+  color: #7b7b7b;
+  background: #e5e5e5;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  margin-right: 20px;
+}
+.search-icon {
+  position: absolute;
+  padding: 10px;
+  z-index: 3;
+}
 
-  .header {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(62, 173, 173);
-  }
-
-  .header__people {
-    position: fixed;
-    margin: 30% auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    top: 0;
-    z-index: 4;
-  }
-
-  .header__person {
-    width: 100px;
-    margin: 10px;
-  }
-
+@media (max-width: 1440px) {
   .header__logo {
-    width: 30%;
-    margin: 0 auto;
-    margin-right: 10px;
+    width: calc(100px + (155 - 100) * ((100vw - 320px) / (1440 - 320)));
+    height: calc(50px + (71 - 50) * ((100vw - 320px) / (1440 - 320)));
+    background: #c4c4c4;
+    border-radius: calc(10px + (20 - 10) * ((100vw - 320px) / (1440 - 320)));
+    margin-right: calc(10px + (50 - 10) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .header__container {
+    margin: 20px calc(20px + (80 - 20) * ((100vw - 320px) / (1440 - 320))) 0
+      calc(20px + (80 - 20) * ((100vw - 320px) / (1440 - 320)));
   }
 
-  .person-info {
-    margin: 10px 0;
-    width: 90%;
+  .header__mobil {
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
-
-  .person-info > a {
-    display: flex;
-    align-items: center;
+  .header__mobil .header__burger {
+    order: 1;
+    display: none;
   }
-
-  .person-info > a > img {
-    height: 80px;
+  .header__mobil .header__logo {
+    order: 2;
   }
+}
 
-  .arrow-down {
-    margin-left: 12px;
-    width: 0;
-    height: 0;
-    border-left: 14px solid transparent;
-    border-right: 14px solid transparent;
-    border-top: 14px solid #002202;
+@media (max-width: 1135px) {
+  .header__people {
+    display: none;
   }
-
   .header__burger {
     display: block;
     position: relative;
@@ -253,17 +258,17 @@ export default {
     height: 20px;
   }
 
-  .header__burger .active::before {
+  .header__burger.active::before {
     transform: rotate(45deg);
     top: 9px;
   }
 
-  .header__burger .active::after {
+  .header__burger.active::after {
     transform: rotate(-45deg);
     bottom: 9px;
   }
 
-  .header__burger span .active {
+  .header__burger.active span {
     transform: scale(0);
   }
 
@@ -287,19 +292,75 @@ export default {
   .header__burger span {
     bottom: 9px;
   }
+  .header__mobil {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header__mobil .header__burger {
+    display: block;
+    order: 1;
+    margin-right: 10px;
+  }
+  .header__mobil .header__logo {
+    order: 2;
+  }
+  .header__container.active {
+    position: fixed;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(104, 102, 102, 0.432);
+    z-index: 1;
+  }
+  .header__wrapper.active {
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+    background-color: rgb(255, 255, 255);
+    width: 60%;
+    height: 100vh;
+    z-index: 3;
+  }
+  .header__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header__people.active {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 }
 
-@media (max-width: 530px) {
-  .header__burger {
-    width: 40px;
+@media (max-width: 767px) {
+  .search {
+    display: none;
   }
-}
-@media (max-width: 376px) {
-  .header__burger {
-    width: 50px;
+  .person-info.active {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 20px;
   }
-  .header__container {
-    margin: 20px 20px 0 10px;
+  .search.active {
+    display: block;
+    margin-top: 10px;
+    order: 1;
+  }
+  .person-dropdown.active {
+    order: 2;
+  }
+  .search.active input {
+    width: 150px;
+    padding: 5px 40px;
   }
 }
 </style>

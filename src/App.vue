@@ -118,8 +118,6 @@ section {
 html {
   display: block;
   box-sizing: border-box;
-  height: auto;
-  min-height: 100% !important;
 }
 input,
 button,
@@ -130,6 +128,10 @@ body {
   font-size: 18px;
   line-height: 22px;
   border: none;
+}
+body {
+  height: 100%;
+  margin: 0;
 }
 ol,
 ul {

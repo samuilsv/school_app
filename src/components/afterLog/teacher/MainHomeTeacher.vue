@@ -13,27 +13,29 @@
           >
             <img :src="book.photo" alt="" class="book__img" />
             <div class="book-info">
-              <div class="book-info__title">
-                {{ index + 1 }}. {{ book.task }}
-              </div>
-              <div class="book-info__discription">{{ book.discription }}</div>
-              <div class="book-info__time-test">
-                Тестування на <strong>{{ book.time }} хвилин.</strong>
-              </div>
-              <div class="book-info__score">
-                Кожна правильна відповідь
-                <strong>+{{ book.score }} бал.</strong>
-              </div>
-              <div class="book-info__sum-score">
-                Ти можеш отримати <strong>{{ book.sumScore }} балів.</strong>
-              </div>
-              <div class="book-info__button">
-                <router-link class="book-info__look-task" to="#"
-                  >Переглянути завдання</router-link
-                >
-                <router-link class="book-info__share" to="#"
-                  ><img src="../../../assets/icon/Share.svg" alt="Share"
-                /></router-link>
+              <div class="book-info__body">
+                <div class="book-info__title">
+                  {{ index + 1 }}. {{ book.task }}
+                </div>
+                <div class="book-info__discription">{{ book.discription }}</div>
+                <div class="book-info__time-test">
+                  Тестування на <strong>{{ book.time }} хвилин.</strong>
+                </div>
+                <div class="book-info__score">
+                  Кожна правильна відповідь
+                  <strong>+{{ book.score }} бал.</strong>
+                </div>
+                <div class="book-info__sum-score">
+                  Ти можеш отримати <strong>{{ book.sumScore }} балів.</strong>
+                </div>
+                <div class="book-info__button">
+                  <router-link class="book-info__look-task" to="#"
+                    >Переглянути завдання</router-link
+                  >
+                  <router-link class="book-info__share" to="#"
+                    ><img src="../../../assets/icon/Share.svg" alt="Share"
+                  /></router-link>
+                </div>
               </div>
             </div>
           </div>
@@ -92,6 +94,8 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+  margin-top: 30px;
+
   // .home__body
   &__body {
     display: flex;
@@ -182,6 +186,7 @@ export default {
     margin-right: 20px;
   }
   &__look-task {
+    text-align: center;
     padding: 8.5px 14px;
     color: #ffffff;
     background: #62c567;
@@ -218,6 +223,66 @@ export default {
   &__description {
     line-height: 22px;
     color: #000000;
+  }
+}
+
+@media (max-width: 1440px) {
+  .home {
+    &__container {
+      margin: 0 calc(20px + (80 - 20) * ((100vw - 320px) / (1400 - 320)));
+    }
+
+    // .home__title
+    &__title {
+      font-weight: bold;
+      font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1400 - 320)));
+      line-height: calc(22px + (29 - 22) * ((100vw - 320px) / (1400 - 320)));
+      color: #353535;
+
+      margin-top: calc(5px + (15 - 5) * ((100vw - 320px) / (1400 - 320)));
+      margin-bottom: calc(10px + (28 - 10) * ((100vw - 320px) / (1400 - 320)));
+    }
+  }
+  .book {
+    &__img {
+      margin-bottom: calc(10px + (44 - 10) * ((100vw - 320px) / (1400 - 320)));
+    }
+  }
+}
+@media (max-width: 1075px) {
+  .home {
+    &__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .home {
+    // .home__title
+    &__title {
+      text-align: center;
+    }
+  }
+  .book {
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .book-info {
+    &__button {
+      margin-bottom: 10px;
+    }
+    // &__body {
+    //   margin: 0 auto;
+    // }
+  }
+  .person-info {
+    margin: 0 auto;
   }
 }
 </style>

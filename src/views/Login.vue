@@ -2,7 +2,9 @@
   <div class="modal-mask">
     <div class="modal-wrapper">
       <div class="modal-container">
-        <router-link to="/" class="modal-header"></router-link>
+        <div class="modal-close">
+          <router-link to="/" class="modal-header"></router-link>
+        </div>
         <div class="modal-body">
           <div class="modal-title">Вхід</div>
           <div class="modal-description">
@@ -31,6 +33,7 @@
 }
 
 .modal-container {
+  position: relative;
   width: 526px;
   margin: 0px auto;
   padding: 90px 30px;
@@ -41,13 +44,18 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
+.modal-close {
+  position: absolute;
+  top: 7%;
+  left: 94%;
+}
+
 .modal-header {
   opacity: 0.4;
   width: 24px;
   height: 24px;
-  top: -3rem;
-  left: 27.5rem;
   position: relative;
+  z-index: 3;
   border-radius: 6px;
 }
 
@@ -62,16 +70,16 @@
 }
 
 .modal-header::before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  transform: rotate(45deg);
-  left: -12px;
-}
-
-.modal-header::after {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
+  left: -13px;
+}
+
+.modal-header::after {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
   right: -12px;
 }
 
@@ -134,5 +142,33 @@
 }
 .modal-button a:last-child {
   margin-right: 0px;
+}
+
+@media (max-width: 1440px) {
+  .modal-container {
+    width: calc(300px + (526 - 300) * ((100vw - 320px) / (1440 - 320)));
+    padding: calc(40px + (90 - 40) * ((100vw - 320px) / (1440 - 320)))
+      calc(15px + (30 - 15) * ((100vw - 320px) / (1440 - 320)));
+  }
+  .modal {
+    // .modal__title
+    &__title {
+      font-size: calc(24px + (36 - 24) * ((100vw - 320px) / (1440 - 320)));
+      line-height: calc(26px + (44 - 26) * ((100vw - 320px) / (1440 - 320)));
+      margin-bottom: calc(5px + (10 - 5) * ((100vw - 320px) / (1440 - 320)));
+    }
+
+    .modal-description {
+      line-height: calc(16px + (22 - 16) * ((100vw - 320px) / (1440 - 320)));
+      max-width: calc(200px + (301 - 200) * ((100vw - 320px) / (1440 - 320)));
+      margin-bottom: calc(15px + (45 - 15) * ((100vw - 320px) / (1440 - 320)));
+    }
+    .modal-button a {
+      line-height: calc(16px + (22 - 16) * ((100vw - 320px) / (1440 - 320)));
+      padding: calc(4px + (8 - 4) * ((100vw - 320px) / (1440 - 320)))
+        calc(18px + (28 - 18) * ((100vw - 320px) / (1440 - 320)));
+      margin-right: calc(5px + (10 - 5) * ((100vw - 320px) / (1440 - 320)));
+    }
+  }
 }
 </style>

@@ -1,58 +1,58 @@
 <template>
   <div class="modal-mask">
-    <div class="modal-wrapper">
-      <router-link to="/" class="modal-header"></router-link>
-      <div class="modal-container">
-        <div class="modal-student">
-          <div class="modal-student__body">
-            <div class="modal-student__title">Оновити інформацію</div>
-            <div class="modal-student__top">
-              <img
-                class="modal-student__photo"
-                src="../../assets/main/Child.png"
-                alt="Child"
-              />
-              <router-link to="/updatePhoto" class="modal-student__button"
-                >Редагувати</router-link
-              >
-            </div>
-            <form @submit="changeHandler()" class="modal-student__bottom">
-              <div class="modal-student__change">
-                ПІБ<input
-                  type="text"
-                  v-model="studentData"
-                  placeholder="Петро Пяточкін"
-                />
-              </div>
-              <div class="modal-student__change">
-                Школа<input type="text" v-model="school" placeholder="№36" />
-              </div>
-              <div class="modal-student__change">
-                Класс<input
-                  type="text"
-                  v-model="classStudent"
-                  placeholder="Безстрашні"
-                />
-              </div>
-              <div class="modal-student__change">
-                Email<input
-                  type="text"
-                  v-model="email"
-                  placeholder="p.pyatochkin@gmail.com"
-                />
-              </div>
-              <div class="modal-student__change">
-                Пароль<input
-                  type="password"
-                  v-model="password"
-                  placeholder="••••••••"
-                />
-              </div>
-              <div class="modal-student__save">
-                <button type="submit">Зберегти</button>
-              </div>
-            </form>
+    <div class="modal-container">
+      <div class="modal-close">
+        <router-link to="/" class="modal-header"></router-link>
+      </div>
+      <div class="modal-student">
+        <div class="modal-student__body">
+          <div class="modal-student__title">Оновити інформацію</div>
+          <div class="modal-student__top">
+            <img
+              class="modal-student__photo"
+              src="../../assets/main/Child.png"
+              alt="Child"
+            />
+            <router-link to="/updatePhotoStudent" class="modal-student__button"
+              >Редагувати</router-link
+            >
           </div>
+          <form @submit="changeHandler()" class="modal-student__bottom">
+            <div class="modal-student__change">
+              ПІБ<input
+                type="text"
+                v-model="studentData"
+                placeholder="Петро Пяточкін"
+              />
+            </div>
+            <div class="modal-student__change">
+              Школа<input type="text" v-model="school" placeholder="№36" />
+            </div>
+            <div class="modal-student__change">
+              Класс<input
+                type="text"
+                v-model="classStudent"
+                placeholder="Безстрашні"
+              />
+            </div>
+            <div class="modal-student__change">
+              Email<input
+                type="text"
+                v-model="email"
+                placeholder="p.pyatochkin@gmail.com"
+              />
+            </div>
+            <div class="modal-student__change">
+              Пароль<input
+                type="password"
+                v-model="password"
+                placeholder="••••••••"
+              />
+            </div>
+            <div class="modal-student__save">
+              <button type="submit">Зберегти</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -79,33 +79,34 @@ export default {
 <style lang="scss" scoped>
 .modal-mask {
   width: 100%;
-  min-height: 100%;
-  overflow-y: auto;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  position: fixed;
   box-sizing: border-box;
   background-color: rgba(41, 41, 41, 0.5);
   transition: opacity 0.3s ease;
 }
 
 .modal-container {
+  margin: 10px 0;
+  position: relative;
   height: auto;
   max-width: 530px;
   padding: 52px 46px 5px 60px;
   background: #ffffff;
   box-shadow: 0px 2px 25px rgba(204, 219, 224, 0.5);
   border-radius: 20px;
-  transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-close {
+  position: absolute;
+  top: 3%;
+  left: 93%;
 }
 
 .modal-header {
-  float: right;
-  margin-top: 25px;
   opacity: 0.4;
   width: 24px;
   height: 24px;
@@ -128,14 +129,14 @@ export default {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  right: 12px;
+  left: -13px;
 }
 
 .modal-header::after {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   transform: rotate(45deg);
-  left: -13px;
+  right: -12px;
 }
 
 .modal-enter .modal-container,
@@ -148,6 +149,7 @@ export default {
   // .modal-student__body
   &__body {
     background: #ffffff;
+    box-shadow: none;
   }
 
   &__title {
@@ -230,10 +232,9 @@ export default {
 
 @media (max-width: 1440px) {
   .modal-container {
-    margin: 10px 0;
     max-width: calc(250px + (523 - 250) * ((100vw - 320px) / (1440 - 320)));
-    padding: calc(10px + (52 - 10) * ((100vw - 320px) / (1440 - 320)))
-      calc(13px + (46 - 13) * ((100vw - 320px) / (1440 - 320))) 5px
+    padding: calc(30px + (52 - 30) * ((100vw - 320px) / (1440 - 320)))
+      calc(15px + (46 - 15) * ((100vw - 320px) / (1440 - 320))) 5px
       calc(15px + (60 - 15) * ((100vw - 320px) / (1440 - 320)));
   }
 
@@ -245,11 +246,10 @@ export default {
     }
 
     &__title {
-      font-weight: bold;
       font-size: calc(22px + (36 - 22) * ((100vw - 320px) / (1440 - 320)));
       line-height: calc(22px + (44 - 22) * ((100vw - 320px) / (1440 - 320)));
       color: #353535;
-      margin-bottom: calc(5px + (36 - 5) * ((100vw - 320px) / (1440 - 320)));
+      margin-bottom: calc(10px + (36 - 10) * ((100vw - 320px) / (1440 - 320)));
     }
 
     // .modal-student__photo

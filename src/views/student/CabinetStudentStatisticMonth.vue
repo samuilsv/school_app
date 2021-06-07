@@ -23,22 +23,28 @@ export default {
 </script>
 
 <style>
-.home {
+/* .home {
   height: 100vh;
   display: flex;
   flex-direction: column;
-}
+} */
 
-.header {
-  /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+/* .header {
   flex: 0 0 auto;
 }
 .main-content {
-  /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
   flex: 1 0 auto;
 }
 .footer {
-  /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
   flex: 0 0 auto;
+} */
+
+.home {
+  margin-bottom: 170px;
+}
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 </style>
