@@ -111,7 +111,7 @@ export default {
     align-items: center;
     justify-content: center;
     // flex-wrap: wrap;
-    margin-bottom: 208px;
+    margin-bottom: 190px;
   }
   // &__list a:hover {
   //   background-image: url("../../assets/homePersons/Tooltip.png");
@@ -127,14 +127,9 @@ export default {
   align-items: center;
 }
 
-.fixed {
-  position: fixed;
-  top: 1;
-}
-
-.mb {
-  margin-bottom: 250px;
-}
+// .mb {
+//   margin-bottom: 250px;
+// }
 
 .hide {
   display: none;
@@ -149,7 +144,7 @@ export default {
   box-shadow: 0px 2px 25px rgba(204, 219, 224, 0.5);
   border-radius: 10px;
   margin-bottom: 20px;
-  margin-top: -390px;
+  margin-top: -140px;
   margin-left: 100px;
 }
 .speech:after,
